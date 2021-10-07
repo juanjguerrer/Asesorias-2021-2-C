@@ -3,4 +3,4 @@
 
 ---
 
-1. helloWOrld.c: Simple Hello world
+1. HelloWorld.c: Simple Hello world
