@@ -4,3 +4,12 @@
 ---
 
 1. HelloWorld.c: Simple Hello world
+2. Variables.c Tipos de variable y como declararlas
+3. basics_operations.c Operaciones básicas(+ - * / %) con dos numeros pedidos al usuario
+4. Escapes_Sequences.c
+5. print_VariasVariables.c Imprimir varias variables en un solo printf()
+6. Operadores.c Comparaciones basicas dentro de un if(<,>,==, <=, >=) de dos numeros pedidos al usuario
+7. EjemploWhile.C Ejemplo basico de suma de n numeros pedidos al usuario
+8. while.c Ejemplo de multiplicacion de numeros usando while
+9. for.c Llenado de un arreglo mediante for
+10. Switch.c 
