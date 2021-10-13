@@ -13,3 +13,4 @@
 8. while.c Ejemplo de multiplicacion de numeros usando while
 9. for.c Llenado de un arreglo mediante for
 10. Switch.c 
+11. Suma_Sin_Cos.c Conjunto de operaciones mediante el uso de funciones
