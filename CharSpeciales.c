@@ -2,7 +2,7 @@
 #include <locale.h>
 void main(){
 	setlocale(LC_ALL, "");
-	printf("ñ á é í ó ú, ü\n");
+	printf("Ã± Ã¡ Ã© Ã­ Ã³ Ãº, Ã¼\n");
 	
 	getch();
 }
