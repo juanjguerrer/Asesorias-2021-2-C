@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<string.h>
 
-char* concat(char *s1, char *s2);
+int buscar(char *str1, char *str2); 
 
 int main(){
 /* 1. Leer
@@ -16,16 +16,20 @@ setlocale(LC_ALL, "");
 int opcion;
 char nombre[25];
 char linea[1000];
+char txtbuscar[30];
+char borrar[30] = "rm ";
 char* nombre2 = "lol3.txt";
 FILE *archivo;
-char* borrar = "rm ";
 char prueba;
+char temp;
 do{
         printf("Gestor de archivos\n");
         printf("\n   1. Mostrar archivos");
         printf("\n   2. Crear archivos");
        	printf("\n   3. Leer archivos");
-       	printf("\n   4. Borrar archivos");	
+	printf("\n   4. Borrar archivos");
+	printf("\n   5. Escribir al final de un archivo");
+	printf("\n   6. Buscar en un archivo");
         printf("\n   7. Salir\n\n");
         scanf("%d", &opcion);
 
@@ -57,9 +61,39 @@ do{
 			break;
 		case 4:
 			printf( "\n   Introduzca el nombre del archivo a borrar ");
-			scanf("%s", nombre);
-			char* comando = concat(borrar, nombre);
-			system(comando);
+                        scanf("%s", nombre);
+                      	strcat(borrar, nombre);
+			system(borrar);	
+		break;
+		case 5:
+			printf( "\n   Introduzca el nombre del archivo a escribir al final o a crear:  ");
+                        scanf("%s", nombre);
+                        archivo = fopen(nombre, "a");
+                        if(archivo == NULL){
+                                printf("Archivo inexistente");
+                                break;}
+			printf("Ingresa lo que se agregará: ");
+			scanf("%c", &temp);
+			scanf("%[^\n]", linea);
+			fprintf(archivo, "%s\n", linea);
+			fclose(archivo);
+		break;
+		case 6:
+			printf( "\n   Introduzca el nombre del archivo para buscar:  ");
+                        scanf("%s", nombre);
+                        archivo = fopen(nombre, "r");
+                        if(archivo == NULL){
+                                printf("Archivo inexistente");
+                                break;}
+                        printf("Ingresa lo que se buscará: ");
+                        scanf("%c", &temp);
+                        scanf("%[^\n]", txtbuscar);
+			printf("Lineas que coinciden: \n");			
+			while (fgets(linea, sizeof(linea), archivo) != NULL) {
+				if(buscar(linea, txtbuscar)){
+				printf("%s", linea);
+				};
+                        }
 		break;
 		case 7:
 		break;
@@ -73,4 +107,18 @@ char* concat(char *s1, char *s2){
         strcpy(result, s1);
         strcat(result, s2);
         return result;
+}
+int buscar(char *str1, char *str2){
+        int i= 0;
+        int len1 = strlen(str1);
+        int len2 = strlen(str2);
+        char c = str2[0];
+        while(i < len1){  
+                if(str1[i] == c){
+                if(strncmp(&str1[i], str2, len2) == 0){
+                        return 1;
+                }}
+                i++;
+        }
+        return 0;
 }
