@@ -14,3 +14,5 @@
 9. for.c Llenado de un arreglo mediante for
 10. Switch.c 
 11. Suma_Sin_Cos.c Conjunto de operaciones mediante el uso de funciones
+12. FileManager.c Gestor de arcivos
+13. Struct.c Estructuras nv básico
