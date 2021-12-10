@@ -16,3 +16,5 @@
 11. Suma_Sin_Cos.c Conjunto de operaciones mediante el uso de funciones
 12. FileManager.c Gestor de arcivos
 13. Struct.c Estructuras nv básico
+14. structs2.c Estructuras guardadas en txt con id dinamico
+15. users.c Leer de txt y comparar usuarios y contraseñas 
